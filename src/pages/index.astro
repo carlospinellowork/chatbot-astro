@@ -1,0 +1,93 @@
+---
+import { MessageCircle, X, Send } from "@lucide/astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="fixed bottom-4 right-4 z-50">
+    <button
+      id="openChat"
+      class="cursor-pointer bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition"
+    >
+      <MessageCircle />
+    </button>
+
+    <form
+      id="chatForm"
+      class="hidden mt-4 bg-white rounded-lg border border-zinc-200 w-72 flex flex-col gap-3"
+    >
+      <header
+        class="flex items-center justify-between p-3 border-b border-zinc-200"
+      >
+        <h2 class="text-lg font-semibold">Envie sua dúvida</h2>
+        <button
+          type="button"
+          id="closeChat"
+          class="cursor-pointer text-gray-400 hover:text-gray-600 text-xl font-bold"
+          aria-label="Fechar"
+        >
+          <X />
+        </button>
+      </header>
+      <div class="flex flex-col gap-2 p-3">
+        <label class="text-sm font-medium" for="userName">Seu nome:</label>
+        <input
+          id="userName"
+          name="userName"
+          type="text"
+          class="bg-gray-50 border border-gray-300 text-gray-900 rounded px-2 py-1 focus:border-green-500"
+          placeholder="Digite seu nome"
+          required
+        />
+
+        <label class="text-sm font-medium" for="userQuestion">Dúvida:</label>
+        <textarea
+          id="userQuestion"
+          name="userQuestion"
+          rows="4"
+          class="bg-gray-50 border border-gray-300 text-gray-900 rounded px-2 py-1 focus:border-green-500 resize-none"
+          placeholder="Digite sua dúvida sobre nosso produto"
+          required></textarea>
+
+        <button
+          type="submit"
+          class="bg-green-500 text-white py-2 rounded hover:bg-green-600 transition mt-2 flex items-center justify-center gap-2"
+        >
+          <Send />
+          <span>Enviar</span>
+        </button>
+      </div>
+    </form>
+  </div></Layout
+>
+
+<script>
+  const btn = document.getElementById("openChat");
+  const form = document.getElementById("chatForm");
+
+  btn?.addEventListener("click", () => {
+    btn?.classList.add("hidden");
+    form?.classList.toggle("hidden");
+  });
+
+  const closeBtn = document.getElementById("closeChat");
+  closeBtn?.addEventListener("click", () => {
+    document.getElementById("chatForm")?.classList.add("hidden");
+    document.getElementById("openChat")?.classList.remove("hidden");
+  });
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = (document.getElementById("userName") as HTMLInputElement)
+      ?.value;
+    const question = (
+      document.getElementById("userQuestion") as HTMLTextAreaElement
+    )?.value;
+
+    const phone = "5511957944402";
+    const msg = `Nome: ${name}\n Pergunta: ${question}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+  });
+</script>
