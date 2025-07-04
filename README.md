@@ -1,47 +1,32 @@
-# Astro Starter Kit: Minimal
+# 🤖 Chatbot Astro
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Um mini chatbot/widget construído com **Astro** + **Tailwind CSS**, que pode ser embedado em qualquer site com facilidade. Ideal para testes de interface, coleta de dados e integração com WhatsApp.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 🔗 Live Demo
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Acesse o projeto ao vivo em:  
+👉 [https://chatbot-astro.vercel.app](https://chatbot-astro.vercel.app)
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📦 Tecnologias Utilizadas
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🚀 Como Rodar Localmente
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+# Clone o repositório
+git clone https://github.com/carlospinellowork/chatbot-astro.git
+cd chatbot-astro
 
-## 🧞 Commands
+# Instale as dependências
+npm install
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# Inicie o servidor de desenvolvimento
+npm run dev
